@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+gas=pd.read_csv('gas_prices A.csv')
+plt.figure(figsize=(8,5))
+plt.title('Gas prices over Time(in USD)')
+plt.plot(gas.Year, gas.USA, 'r.-')
+plt.plot(gas.Year, gas.Canada, 'b.-')
+plt.plot(gas.Year, gas['Italy'])
+plt.plot(gas.Year, gas['France'])
+plt.plot(gas.Year, gas['Japan'])
+plt.plot(gas.Year, gas['Mexico'])
+plt.xlabel('Year')
+plt.ylabel('USD')
+plt.xticks((gas.Year[::3]))
+plt.legend()
+plt.show()
